@@ -1,0 +1,191 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family:
+		-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+		Arial, sans-serif;
+	background: #f0f2f5;
+	color: #1a1a2e;
+}
+
+.app {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 24px 16px;
+}
+
+.app__header {
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+.search-bar {
+	margin-bottom: 24px;
+}
+
+.launch-list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.launch-card {
+	display: flex;
+	gap: 16px;
+	background: #fff;
+	border-radius: 12px;
+	padding: 16px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+	transition:
+		box-shadow 0.2s,
+		transform 0.2s;
+}
+
+.launch-card:hover {
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+	transform: translateY(-2px);
+}
+
+.launch-card__image {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 8px;
+	flex-shrink: 0;
+	background: #f5f5f5;
+}
+
+.launch-card__body {
+	flex: 1;
+	min-width: 0;
+}
+
+.launch-card__title {
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 4px;
+	line-height: 1.3;
+}
+
+.launch-card__status {
+	display: inline-block;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 2px 8px;
+	border-radius: 4px;
+	margin-bottom: 6px;
+}
+
+.launch-card__status--success {
+	background: #e6f7e6;
+	color: #389e0d;
+}
+
+.launch-card__status--error {
+	background: #fff1f0;
+	color: #cf1322;
+}
+
+.launch-card__status--warning {
+	background: #fffbe6;
+	color: #d48806;
+}
+
+.launch-card__status--default {
+	background: #f5f5f5;
+	color: #8c8c8c;
+}
+
+.launch-card__meta {
+	font-size: 13px;
+	color: #8c8c8c;
+	margin-bottom: 4px;
+}
+
+.launch-card__provider {
+	font-size: 13px;
+	color: #595959;
+	margin-bottom: 6px;
+}
+
+.launch-card__description {
+	font-size: 13px;
+	color: #595959;
+	line-height: 1.5;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.launch-card__failreason {
+	margin-top: 6px;
+	font-size: 12px;
+	color: #cf1322;
+	font-style: italic;
+}
+
+.launch-list__end {
+	text-align: center;
+	padding: 24px 0;
+}
+
+.launch-list__sentinel {
+	height: 1px;
+}
+
+@keyframes skeleton-pulse {
+	0% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.6;
+	}
+}
+
+.skeleton {
+	background: linear-gradient(90deg, #e8e8e8 25%, #f5f5f5 50%, #e8e8e8 75%);
+	background-size: 200% 100%;
+	animation: skeleton-pulse 1.5s ease-in-out infinite;
+	border-radius: 6px;
+}
+
+.skeleton--image {
+	width: 100px;
+	height: 100px;
+	border-radius: 8px;
+	flex-shrink: 0;
+}
+
+.skeleton--title {
+	width: 60%;
+	height: 18px;
+	margin-bottom: 8px;
+}
+
+.skeleton--status {
+	width: 90px;
+	height: 20px;
+	margin-bottom: 10px;
+}
+
+.skeleton--text {
+	width: 100%;
+	height: 14px;
+	margin-bottom: 6px;
+}
+
+.skeleton--text--short {
+	width: 40%;
+}
+
+.skeleton--text--long {
+	width: 80%;
+}
