@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 /**
  * @typedef {import('../hooks/useLaunches').Launch} Launch
  */
@@ -35,7 +37,13 @@ const LaunchCard = ({ launch }) => {
 		: 'TBD';
 
 	return (
-		<div className='launch-card'>
+		<motion.div
+			className='launch-card'
+			layout
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			exit={{ opacity: 0, scale: 0.95 }}
+			transition={{ type: 'spring', stiffness: 300, damping: 25 }}>
 			{imgSrc && (
 				<img
 					className='launch-card__image'
@@ -65,7 +73,7 @@ const LaunchCard = ({ launch }) => {
 					<p className='launch-card__failreason'>{failreason}</p>
 				)}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

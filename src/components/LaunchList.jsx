@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { Empty, Alert } from 'antd';
 import LaunchCard from './LaunchCard';
 import SkeletonCard from './SkeletonCard';
@@ -48,9 +49,11 @@ const LaunchList = ({ launches, loading, initialized, hasMore, error, loadMore }
 				/>
 			)}
 
-			{launches.map((launch) => (
-				<LaunchCard key={launch.id} launch={launch} />
-			))}
+			<AnimatePresence mode='popLayout'>
+				{launches.map((launch) => (
+					<LaunchCard key={launch.id} launch={launch} />
+				))}
+			</AnimatePresence>
 
 			{loading && (
 				<>
